@@ -28,6 +28,7 @@ namespace ImageHosting.Module.Upload
             InitializeComponent();
         }
 
+
         private void TreeViewItem_Selected(object sender, RoutedEventArgs e)
         {
             IRegionManager regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();

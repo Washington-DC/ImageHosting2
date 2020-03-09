@@ -3,4 +3,28 @@
                     xmlns:local="clr-namespace:ImageHosting.Controls.Themes">
     <SolidColorBrush x:Key="NavigateBackground" Color="#3c4852" />
 
+    <!-- 普通状态的画刷 -->
+    <SolidColorBrush x:Key="NormalBackgroundBrushKey" Color="#3c4852" />
+    <SolidColorBrush x:Key="NormalForegroundBrushKey" Color="#9DA3A8" />
+    <SolidColorBrush x:Key="NormalBorderBrushKey" Color="#3c4852" />
+
+    <!-- 悬停状态的画刷 -->
+    <SolidColorBrush x:Key="HoverBackgroundBrushKey" Color="#313A42" />
+    <SolidColorBrush x:Key="HoverForegroundBrushKey" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="HoverBorderBrushKey" Color="#313A42" />
+
+    <!-- 选中(激活)状态的画刷 -->
+    <SolidColorBrush x:Key="SelectedActiveBackgroundBrushKey" Color="#252c32" />
+    <SolidColorBrush x:Key="SelectedActiveForegroundBrushKey" Color="#5595DC" />
+    <SolidColorBrush x:Key="SelectedActiveBorderBrushKey" Color="#252c32" />
+
+    <!-- 选中(悬停)状态的画刷 -->
+    <SolidColorBrush x:Key="SelectedHoverBackgroundBrushKey" Color="#252c32" />
+    <SolidColorBrush x:Key="SelectedHoverForegroundBrushKey" Color="#5595DC" />
+    <SolidColorBrush x:Key="SelectedHoverBorderBrushKey" Color="#252c32" />
+
+    <!-- 选中(失效)状态的画刷 -->
+    <SolidColorBrush x:Key="SelectedInactiveBackgroundBrushKey" Color="#252c32" />
+    <SolidColorBrush x:Key="SelectedInactiveForegroundBrushKey" Color="#5595DC" />
+    <SolidColorBrush x:Key="SelectedInactiveBorderBrushKey" Color="#252c32" />
 </ResourceDictionary>

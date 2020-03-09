@@ -7,8 +7,10 @@
               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
               xmlns:infra="clr-namespace:ImageHosting.Infrastructure;assembly=ImageHosting.Infrastructure"
               mc:Ignorable="d"
-              Header="Server"
+              Header="Servers"
               Selected="TreeViewItem_Selected"
+              Tag="{iconPacks:FontAwesome ToolboxSolid,Width=20,Height=20}" 
+              Style="{DynamicResource MetroTreeViewItemStyle}"
               prism:RegionManager.RegionName="{x:Static infra:RegionToken.ImageServerRegionName}" 
               MouseLeftButtonDown="TreeViewItem_MouseLeftButtonDown" >
 </TreeViewItem>

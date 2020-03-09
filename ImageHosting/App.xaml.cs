@@ -36,5 +36,6 @@ namespace ImageHosting
         {
             return new DirectoryModuleCatalog() { ModulePath = @".\Modules" };
         }
+
     }
 }

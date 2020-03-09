@@ -6,5 +6,7 @@
               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
               mc:Ignorable="d"
               Header="Gallery"
+              Style="{DynamicResource MetroTreeViewItemStyle}"
+              Tag="{iconPacks:FontAwesome ImagesSolid,Width=20,Height=20}" 
               Selected="TreeViewItem_Selected">
 </TreeViewItem>

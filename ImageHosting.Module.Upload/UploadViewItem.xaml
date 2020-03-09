@@ -5,8 +5,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ImageHosting.Module.Upload"
              mc:Ignorable="d" 
-              Header="Upload"
-              Selected="TreeViewItem_Selected"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             Header="Upload"
+             Style="{DynamicResource MetroTreeViewItemStyle}"
+             Tag="{iconPacks:FontAwesome CloudUploadAltSolid,Width=20,Height=20}" 
+             Selected="TreeViewItem_Selected"
             >
- 
+
 </TreeViewItem>

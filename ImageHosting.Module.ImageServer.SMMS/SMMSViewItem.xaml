@@ -7,6 +7,8 @@
               xmlns:res="clr-namespace:ImageHosting.Module.ImageServer.SMMS.Properties"
               mc:Ignorable="d"
               Header="SMMS"
+              Style="{DynamicResource MetroTreeViewItemStyle}"
+              Tag="{iconPacks:FontAwesome FreebsdBrands,Width=20,Height=20}" 
               Selected="TreeViewItem_Selected">
 
 </TreeViewItem>

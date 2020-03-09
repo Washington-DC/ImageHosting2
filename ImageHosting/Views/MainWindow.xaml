@@ -18,7 +18,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Image Margin="0,20,0,0" Stretch="Uniform" Source="{Binding AppIconPath}" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                    <Image Margin="0,20,0,0"  Stretch="UniformToFill" Source="{Binding AppIconPath}" VerticalAlignment="Center" HorizontalAlignment="Center" >
                         <Image.Clip>
                             <EllipseGeometry Center="75,50" RadiusX="50" RadiusY="50" />
                         </Image.Clip>
