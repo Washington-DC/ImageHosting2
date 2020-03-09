@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="ImageHosting.Module.Upload.Views.UploadView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ImageHosting.Module.Upload.Views"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             xmlns:command="clr-namespace:Prism.Commands;assembly=Prism"
+             xmlns:i ="http://schemas.microsoft.com/expression/2010/interactivity"
+             d:DesignHeight="400" d:DesignWidth="450"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True" >
+    <Grid>
+        <Grid.RowDefinitions >
+            <RowDefinition />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <Button x:Name="grid" Command="{Binding UploadImageCommand}" AllowDrop="True"  >
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Drop" >
+                    <prism:InvokeCommandAction Command="{Binding DragImageCommand }" CommandParameter="{Binding TriggerParameterPath}"   />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="100">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <TextBlock Text="将文件拖到此处，或点击上传" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" />
+            </Grid>
+        </Button>
+    </Grid>
+</UserControl>
