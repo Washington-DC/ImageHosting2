@@ -5,6 +5,7 @@ using System.Windows;
 using ImageHosting.Module.Upload;
 using ImageHosting.Module.ImageServerManage;
 using ImageHosting.Module.ImageServer.SMMS;
+using ImageHosting.Module.Gallery;
 
 namespace ImageHosting
 {
@@ -26,6 +27,7 @@ namespace ImageHosting
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
             moduleCatalog.AddModule<UploadModule>();
+            moduleCatalog.AddModule<GalleryModule>();
             moduleCatalog.AddModule<ImageServerManageModule>();
             moduleCatalog.AddModule<SMMSModule>();
         }

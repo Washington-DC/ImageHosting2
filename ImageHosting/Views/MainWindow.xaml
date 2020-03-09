@@ -12,7 +12,7 @@
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Grid Background="Gray">
+            <Grid Background="{DynamicResource NavigateBackground}">
                 <Grid.RowDefinitions >
                     <RowDefinition Height="150"/>
                     <RowDefinition Height="*"/>
@@ -24,7 +24,7 @@
                         </Image.Clip>
                     </Image>
                 </Grid>
-                <TreeView Margin="0,10,0,0" Background="LightGray" Grid.Row="1" prism:RegionManager.RegionName="{x:Static infra:RegionToken.NavigationBarRegionName}"/>
+                <TreeView Background="Transparent" Margin="0,10,0,0" Grid.Row="1" prism:RegionManager.RegionName="{x:Static infra:RegionToken.NavigationBarRegionName}"/>
             </Grid>
 
             <Grid Grid.Column="1">

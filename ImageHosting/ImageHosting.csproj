@@ -121,6 +121,10 @@
       <Project>{f0cbddee-ab55-430c-90db-7bd85a725ea2}</Project>
       <Name>ImageHosting.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ImageHosting.Module.Gallery\ImageHosting.Module.Gallery.csproj">
+      <Project>{AF75892C-3D6E-44D8-A593-18AAAFBF85E6}</Project>
+      <Name>ImageHosting.Module.Gallery</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ImageHosting.Module.ImageServer.SMMS\ImageHosting.Module.ImageServer.SMMS.csproj">
       <Project>{7ED765CA-38D8-4D16-87DC-B7841BC50BB1}</Project>
       <Name>ImageHosting.Module.ImageServer.SMMS</Name>

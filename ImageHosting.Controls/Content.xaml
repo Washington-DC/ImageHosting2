@@ -3,5 +3,6 @@
                     xmlns:local="clr-namespace:ImageHosting.Controls">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Controls/UniversalWindowStyle.xaml"/>
+        <ResourceDictionary Source="Themes/Theme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
