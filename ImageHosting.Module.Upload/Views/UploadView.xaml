@@ -5,29 +5,70 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d" 
+             xmlns:iconPacks ="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:i ="http://schemas.microsoft.com/expression/2010/interactivity"
              d:DesignHeight="400" d:DesignWidth="450"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True" >
+    <UserControl.Resources>
+        <Style x:Key="DropButtonStyle" TargetType="{x:Type Button}" >
+            <Setter Property="Template" >
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Border x:Name="Border"  BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="50" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                                <Border.BorderBrush>
+                                    <LinearGradientBrush SpreadMethod="Repeat" StartPoint="0,5" EndPoint="5,0" MappingMode="Absolute">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Color="Black" Offset="0"/>
+                                            <GradientStop Color="Black" Offset="0.2"/>
+                                            <GradientStop Color="Transparent" Offset="0.4"/>
+                                            <GradientStop Color="Transparent" Offset="0.6"/>
+                                            <GradientStop Color="Black" Offset="0.8"/>
+                                            <GradientStop Color="Black" Offset="1"/>
+                                        </LinearGradientBrush.GradientStops>
+                                    </LinearGradientBrush>
+                                </Border.BorderBrush>
+                            </Border>
+                            <Grid Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" Height="300">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition Height="0.5*"/>
+                                </Grid.RowDefinitions>
+                                <iconPacks:PackIconFontAwesome  Kind="CloudUploadAltSolid"  Width="160" Height="160" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <TextBlock Text="将文件拖到此处，或点击上传" Grid.Row="1" VerticalAlignment="Top" Margin="0,20,0,0" HorizontalAlignment="Center" FontSize="18" />
+                            </Grid>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="Border" Value="{DynamicResource GrayBrush8}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" TargetName="Border" Value="{DynamicResource GrayBrush7}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions >
             <RowDefinition />
-            <RowDefinition Height="50" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="60" />
         </Grid.RowDefinitions>
-
-        <Button x:Name="grid" Command="{Binding UploadImageCommand}" AllowDrop="True"  >
+        <Button x:Name="grid" Style="{StaticResource DropButtonStyle}" BorderThickness="5" Command="{Binding UploadImageCommand}" AllowDrop="True" Margin="40" >
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="Drop" >
                     <prism:InvokeCommandAction Command="{Binding DragImageCommand}" CommandParameter="{Binding TriggerParameterPath}"   />
                 </i:EventTrigger>
             </i:Interaction.Triggers>
-            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="100">
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition Height="50" />
-                </Grid.RowDefinitions>
-                <TextBlock Text="将文件拖到此处，或点击上传" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" />
-            </Grid>
         </Button>
+        <!--/<ProgressBar Grid.Row="1" Value="{Binding UploadImageProcessPos} " Visibility="{Binding UploadImageFinish}" />-->
+        <StackPanel Grid.Row="2" Margin="15">
+            <Button Width="100" Content="剪贴板上传" Margin="0,2,20,0"  Background="AliceBlue"  HorizontalAlignment="Right" Command="{Binding UploadFromClipBoard}">
+            </Button>
+        </StackPanel>
     </Grid>
 </UserControl>

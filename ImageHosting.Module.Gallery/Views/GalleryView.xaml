@@ -5,12 +5,27 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d" 
+             xmlns:view="clr-namespace:ImageHosting.Infrastructure.Views;assembly=ImageHosting.Infrastructure"
              d:DesignHeight="300" d:DesignWidth="300"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True" >
+    <UserControl.Resources>
+        <DataTemplate x:Key="ImageItemGalleryTemplate">
+            <!--<Grid Height="150" Width="150" Margin="10" >-->
+            <view:ImageItemView Height="160" Width="160" Margin="5"/>
+            <!--</Grid>-->
+        </DataTemplate>
+    </UserControl.Resources>
+  
     <Grid>
-        <TextBlock Text="{Binding Message}"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center" />
+        <ScrollViewer>
+            <ItemsControl Margin="20,0,0,0" ItemTemplate="{StaticResource ImageItemGalleryTemplate}" ItemsSource="{Binding ImageItemGallaryData}" >
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </ScrollViewer>
     </Grid>
 </UserControl>

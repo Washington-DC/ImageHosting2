@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="ImageHosting.Infrastructure.Views.ImageItemView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"  
+             Width="200" Height="200"
+             BorderThickness="1" BorderBrush="LightBlue"
+             xmlns:i ="http://schemas.microsoft.com/expression/2010/interactivity"
+             
+            >
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </UserControl.Resources>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="MouseLeftButtonDown" >
+            <prism:InvokeCommandAction Command="{Binding ClickSelectedCommand}" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="MouseDoubleClick" >
+            <prism:InvokeCommandAction Command="{Binding ShowImageCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid >
+        <Border BorderBrush="DarkGray" BorderThickness="1" />
+        <Image Source="{Binding ImageFullPath}" Stretch="UniformToFill"/>
+
+        <Border Background="Transparent" Visibility="{Binding IsSelected,Converter={StaticResource BooleanToVisibilityConverter}}" Width="50" Height="50" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
+            <Path Fill="BlueViolet" Stroke="#989898" VerticalAlignment="Center"
+                            Data="M0,50 L50,50 L50,0" Stretch="Fill">
+            </Path>
+        </Border>
+
+
+        <!--<StackPanel VerticalAlignment="Top" HorizontalAlignment="Right" Width="50" Height="50" Margin="10" Background="Red" />-->
+
+        <!--<Grid Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Content="Copy" Command="{Binding CopyImageCommand}" Grid.Column="0" />
+            <Button Content="Delete" Command="{Binding DeleteImageCommand}" Grid.Column="1" />
+        </Grid>-->
+
+    </Grid>
+</UserControl>

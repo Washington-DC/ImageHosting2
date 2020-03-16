@@ -13,6 +13,7 @@ namespace ImageHosting.Module.Gallery
             var regionManager = containerProvider.Resolve<IRegionManager>();
             regionManager.RegisterViewWithRegion(RegionToken.NavigationBarRegionName, typeof(GalleryViewItem));
             regionManager.RegisterViewWithRegion(RegionToken.MainContentRegionName, typeof(GalleryView));
+            regionManager.RegisterViewWithRegion(RegionToken.MainContentRegionName, typeof(ImageDetailsView));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
